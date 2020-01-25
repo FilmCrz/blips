@@ -1,2 +1,1 @@
-# blips
-ICON BLIPS AND ID
+# BLIPS Red Dead Redemption [REDM]
