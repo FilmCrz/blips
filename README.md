@@ -1,1 +1,2 @@
-# BLIPS Red Dead Redemption [REDM]
+# BLIPS RED DEAD REDEMPTION [REDM]
+LINK : https://filmcrz.github.io/blips
