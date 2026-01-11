@@ -3,29 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLIPS GALLERY - RDR2 STYLE</title>
-    <!-- Import Google Fonts -->
+    <title>ICON GALLERY - Clean Style</title>
+    <!-- Import Google Fonts: Sarabun (มาตรฐาน สวยงาม) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Rye&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --rdr-red: #cc0000;
-            --rdr-dark-red: #8a0000;
-            --rdr-black: #0a0a0a;
-            --rdr-paper: #dccbba;
-            --rdr-text-paper: #2b2b2b;
-            --text-primary: #e0e0e0;
+            --bg-color: #f4f6f8;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-sub: #666666;
+            --accent-color: #007bff; /* สีน้ำเงินมาตรฐาน สบายตา */
+            --border-color: #e0e0e0;
         }
 
         body {
-            font-family: 'Crimson Text', serif;
-            background-color: var(--rdr-black);
-            background-image: 
-                radial-gradient(circle at center, #1a1a1a 0%, #000000 100%),
-                repeating-linear-gradient(45deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 2px, transparent 2px, transparent 4px);
-            color: var(--text-primary);
+            font-family: 'Sarabun', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             margin: 0;
             padding: 0;
             display: flex;
@@ -34,7 +31,7 @@
             min-height: 100vh;
         }
 
-        /* Toolbar for Export */
+        /* Toolbar */
         .toolbar {
             position: fixed;
             top: 20px;
@@ -43,192 +40,186 @@
         }
 
         .btn-action {
-            background-color: var(--rdr-paper);
-            color: #333;
-            border: 2px solid #5c4033;
-            padding: 8px 15px;
-            font-family: 'Rye', serif;
+            background-color: #fff;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 8px 16px;
+            font-family: 'Sarabun', sans-serif;
             cursor: pointer;
             font-size: 14px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+            font-weight: 600;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
             transition: all 0.2s;
-            text-transform: uppercase;
         }
 
         .btn-action:hover {
-            background-color: #fff;
-            transform: scale(1.05);
+            background-color: var(--accent-color);
+            color: #fff;
         }
 
+        /* Header */
         header {
-            background-color: var(--rdr-red);
-            background-image: linear-gradient(to bottom, #cc0000, #8a0000);
+            background-color: #fff;
             width: 100%;
-            padding: 30px 0 50px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.8);
-            position: relative;
+            padding: 20px 0 30px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
             z-index: 100;
             display: flex;
             flex-direction: column;
             align-items: center;
-            border-bottom: 4px solid #000;
         }
 
         h1 {
-            margin: 0 0 20px 0;
-            font-family: 'Rye', serif;
-            font-weight: 400;
-            font-size: 42px;
-            letter-spacing: 2px;
-            color: #fff;
-            text-shadow: 2px 2px 0px #000;
-            text-transform: uppercase;
+            margin: 0 0 15px 0;
+            font-weight: 600;
+            font-size: 24px;
+            color: var(--text-main);
         }
 
         .search-box {
             position: relative;
             width: 90%;
-            max-width: 600px;
-            transform: translateY(20px);
-            z-index: 101;
+            max-width: 500px;
         }
 
         .search-box input {
             width: 100%;
-            padding: 15px 20px;
-            padding-left: 50px;
-            border-radius: 2px;
-            border: 2px solid #5c4033;
-            background-color: var(--rdr-paper);
-            color: var(--rdr-text-paper);
-            font-family: 'Crimson Text', serif;
-            font-weight: 600;
-            font-size: 18px;
+            padding: 10px 15px;
+            padding-left: 40px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background-color: #f9f9f9;
+            color: var(--text-main);
+            font-family: 'Sarabun', sans-serif;
+            font-size: 16px;
             outline: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             box-sizing: border-box; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
         .search-box input:focus {
-            border-color: #fff;
             background-color: #fff;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
         }
 
         .search-icon {
             position: absolute;
-            left: 15px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
-            color: #5c4033;
-            font-size: 20px;
+            color: #999;
+            font-size: 16px;
         }
 
         .info-bar {
-            margin-top: 5px;
-            font-family: 'Rye', serif;
-            font-size: 14px;
-            color: rgba(255,255,255,0.7);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-top: 8px;
+            font-size: 13px;
+            color: var(--text-sub);
         }
 
+        /* Grid Container */
         .container {
             width: 95%;
-            max-width: 1400px;
-            padding: 40px 0;
+            max-width: 1200px;
+            padding: 30px 0;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
             gap: 15px;
         }
 
+        /* Card Style - Clean & Boxy */
         .card {
-            background-color: #1a1a1a;
-            border-radius: 2px;
-            padding: 10px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 15px 10px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 1px solid #444;
+            border: 1px solid var(--border-color);
             transition: all 0.2s;
             position: relative;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+            overflow: hidden;
         }
 
         .card:hover {
-            border-color: var(--rdr-red);
-            background-color: #222;
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
         }
 
         .card img {
             width: 64px;
             height: 64px;
             object-fit: contain;
-            margin-bottom: 12px;
-            filter: drop-shadow(0 0 2px rgba(255,255,255,0.1));
-            cursor: pointer; /* Click image to copy */
+            margin-bottom: 10px;
+            cursor: pointer;
         }
 
         .card-details {
             text-align: center;
             width: 100%;
-            border-top: 1px solid #333;
-            padding-top: 8px;
-            margin-top: 5px;
         }
 
         /* Editable ID Styling */
         .card-id {
-            color: var(--rdr-paper);
-            font-family: 'Rye', serif;
-            font-size: 13px;
+            color: var(--text-main);
+            font-family: 'Consolas', monospace; /* ฟอนต์แบบ Code เพื่อให้อ่านเลขง่าย */
+            font-weight: bold;
+            font-size: 14px;
             margin-bottom: 4px;
-            letter-spacing: 1px;
             cursor: text;
-            padding: 2px 5px;
-            border: 1px dashed transparent;
-            transition: 0.2s;
-            min-width: 50px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background-color: #f0f0f0;
             display: inline-block;
+            transition: 0.2s;
+            min-width: 60px;
         }
 
         .card-id:hover {
-            border-color: #666;
-            background-color: #333;
+            background-color: #e0e0e0;
         }
 
         .card-id.editing {
-            background-color: var(--rdr-paper);
+            background-color: #fff;
             color: #000;
-            border: 1px solid var(--rdr-red);
+            border: 1px solid var(--accent-color);
             outline: none;
-            min-width: 100px;
+            box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
         }
 
         .card-name {
-            font-size: 11px;
-            color: #888;
-            font-style: italic;
-            user-select: none;
+            font-size: 12px;
+            color: var(--text-sub);
+            margin-top: 4px;
+            word-break: break-all;
         }
 
         /* Copy Feedback */
         .copy-msg {
             position: absolute;
-            top: 5px;
-            right: 5px;
-            background-color: var(--rdr-red);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 123, 255, 0.9);
             color: white;
-            padding: 2px 6px;
-            font-size: 10px;
-            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.2s;
             pointer-events: none;
+            z-index: 10;
         }
         .card.copied .copy-msg { opacity: 1; }
 
@@ -241,53 +232,65 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0,0,0,0.8);
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(2px);
         }
         .modal-content {
-            background-color: var(--rdr-paper);
+            background-color: #fff;
             margin: 10% auto;
-            padding: 20px;
-            border: 4px solid #5c4033;
+            padding: 25px;
+            border-radius: 8px;
             width: 80%;
             max-width: 600px;
-            color: #000;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             position: relative;
         }
         .close {
-            color: #8a0000;
+            color: #aaa;
             float: right;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.2s;
         }
+        .close:hover { color: #000; }
+        
         textarea {
             width: 100%;
             height: 200px;
-            margin-top: 10px;
-            background: #fff;
-            color: #000;
-            font-family: monospace;
+            margin-top: 15px;
             padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            background: #f8f9fa;
+            color: #333;
+            box-sizing: border-box;
         }
 
+        h2 { margin-top: 0; font-size: 20px; color: #333; }
+        p { color: #666; font-size: 14px; }
+
         @media (max-width: 600px) {
-            .grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+            .grid { grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; }
+            h1 { font-size: 20px; }
+            .card-id { font-size: 12px; }
         }
     </style>
 </head>
 <body>
 
     <div class="toolbar">
-        <button class="btn-action" onclick="exportData()">💾 Export Data</button>
+        <button class="btn-action" onclick="exportData()">💾 บันทึกข้อมูล (Export)</button>
     </div>
 
     <header>
-        <h1>Blips Gallery</h1>
-        <div class="info-bar" id="countDisplay">LOADING...</div>
+        <h1>Blips Icon Gallery</h1>
         <div class="search-box">
-            <span class="search-icon">✦</span>
+            <span class="search-icon">🔍</span>
             <input type="text" id="searchInput" placeholder="ค้นหา ID หรือ ชื่อไฟล์...">
         </div>
+        <div class="info-bar" id="countDisplay">กำลังโหลด...</div>
     </header>
 
     <div class="container">
@@ -298,29 +301,32 @@
     <div id="exportModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h2 style="font-family: 'Rye', serif; margin-top: 0;">Export Data</h2>
-            <p>ก๊อปปี้โค้ดด้านล่างไปทับตัวแปร <b>CUSTOM_DATA</b> ในไฟล์ index.html เพื่อบันทึกถาวร:</p>
+            <h2>Export Data (ส่งออกข้อมูล)</h2>
+            <p>คัดลอกโค้ดด้านล่างไปแทนที่ส่วน <b>CUSTOM_DATA</b> ในไฟล์ <code>index.html</code> เพื่อบันทึกข้อมูลถาวร:</p>
             <textarea id="exportText" readonly></textarea>
-            <button class="btn-action" style="margin-top: 10px;" onclick="copyExportText()">Copy Code</button>
+            <div style="margin-top: 15px; text-align: right;">
+                <button class="btn-action" onclick="copyExportText()">คัดลอกโค้ด</button>
+            </div>
         </div>
     </div>
 
     <script>
         // =========================================================================
-        //  CONFIGURATION
+        //  ส่วนตั้งค่าข้อมูล (CONFIGURATION)
         // =========================================================================
         const TOTAL_IMAGES = 1195; 
         const FOLDER_PATH = "index.files/";
         
         // -------------------------------------------------------------------------
-        //  CUSTOM DATA (ส่วนนี้จะถูกแทนที่เมื่อคุณแปะโค้ดใหม่)
+        //  CUSTOM DATA: วางข้อมูลที่คุณ Export มาตรงนี้
         // -------------------------------------------------------------------------
         const CUSTOM_DATA = [
+            // ตัวอย่าง:
             // { "img": "image001.png", "id": "-1018164873" },
         ];
 
         // =========================================================================
-        //  APP LOGIC
+        //  การทำงานของระบบ (SYSTEM LOGIC)
         // =========================================================================
 
         const gridElement = document.getElementById('grid');
@@ -332,7 +338,7 @@
         let allIcons = [];
 
         function init() {
-            // 1. Load basic structure
+            // 1. สร้างโครงสร้างข้อมูลพื้นฐาน
             let baseData = [];
 
             if (CUSTOM_DATA.length > 0) {
@@ -342,24 +348,25 @@
                     const numStr = i.toString().padStart(3, '0');
                     baseData.push({
                         img: `image${numStr}.png`,
-                        id: "UNKNOWN"
+                        id: "-" // ใช้ขีดแทน UNKNOWN ให้ดูสะอาดตา
                     });
                 }
             }
 
-            // 2. Merge with LocalStorage (User edits)
-            const savedData = localStorage.getItem('rdr2_icons_data');
+            // 2. ดึงข้อมูลที่เคยแก้ไขไว้ในเครื่อง (LocalStorage) มาทับ
+            const savedData = localStorage.getItem('clean_icons_data');
             if (savedData) {
-                const parsedSaved = JSON.parse(savedData);
-                // Update IDs based on filename matching
-                baseData.forEach(item => {
-                    if (parsedSaved[item.img]) {
-                        item.id = parsedSaved[item.img];
-                    }
-                });
+                try {
+                    const parsedSaved = JSON.parse(savedData);
+                    baseData.forEach(item => {
+                        if (parsedSaved[item.img]) {
+                            item.id = parsedSaved[item.img];
+                        }
+                    });
+                } catch (e) { console.error("Error loading saved data", e); }
             }
 
-            // 3. Transform to working array
+            // 3. แปลงเป็นรูปแบบพร้อมใช้งาน
             allIcons = baseData.map(item => ({
                 id: item.id,
                 filename: item.img,
@@ -371,7 +378,7 @@
 
         function renderGrid(data) {
             gridElement.innerHTML = '';
-            countDisplay.innerText = `WANTED: ${data.length} ICONS`;
+            countDisplay.innerText = `แสดงผลทั้งหมด: ${data.length} รูป`;
 
             const fragment = document.createDocumentFragment();
 
@@ -381,17 +388,18 @@
                 
                 // HTML Structure
                 card.innerHTML = `
-                    <div class="copy-msg">Copied</div>
+                    <div class="copy-msg">คัดลอกแล้ว!</div>
                     <img src="${item.path}" loading="lazy" 
                          onclick="copyToClipboard('${item.id}', this.parentNode)"
-                         onerror="this.style.opacity='0.3'">
+                         onerror="this.style.opacity='0.2'; this.title='ไม่พบรูปภาพ'">
                     <div class="card-details">
                         <div class="card-id" 
                              contenteditable="true" 
                              spellcheck="false"
                              data-filename="${item.filename}"
                              onfocus="enterEditMode(this)"
-                             onblur="saveEdit(this)">${item.id}</div>
+                             onblur="saveEdit(this)"
+                             title="คลิกเพื่อแก้ไข ID">${item.id}</div>
                         <div class="card-name">${item.filename}</div>
                     </div>
                 `;
@@ -405,8 +413,8 @@
 
         function enterEditMode(el) {
             el.classList.add('editing');
-            if(el.innerText === "UNKNOWN") {
-                el.innerText = ""; // Clear placeholder text
+            if(el.innerText === "-") {
+                el.innerText = ""; // ล้างข้อความ Placeholder เมื่อเริ่มพิมพ์
             }
         }
 
@@ -416,35 +424,34 @@
             const filename = el.dataset.filename;
 
             if (newId === "") {
-                newId = "UNKNOWN";
+                newId = "-";
                 el.innerText = newId;
             }
 
-            // Update in Memory
+            // อัปเดตข้อมูลในหน่วยความจำ
             const iconIndex = allIcons.findIndex(i => i.filename === filename);
             if (iconIndex > -1) {
                 allIcons[iconIndex].id = newId;
             }
 
-            // Save to LocalStorage
+            // บันทึกลงเครื่อง
             saveToStorage();
         }
 
         function saveToStorage() {
-            // Create a map of filename -> id to save space
             const mapToSave = {};
             allIcons.forEach(icon => {
-                if (icon.id !== "UNKNOWN") {
+                if (icon.id !== "-" && icon.id !== "UNKNOWN") {
                     mapToSave[icon.filename] = icon.id;
                 }
             });
-            localStorage.setItem('rdr2_icons_data', JSON.stringify(mapToSave));
+            localStorage.setItem('clean_icons_data', JSON.stringify(mapToSave));
         }
 
         // --- Utilities ---
 
         function copyToClipboard(text, card) {
-            if(text === "UNKNOWN" || text === "") return;
+            if(text === "-" || text === "") return;
             navigator.clipboard.writeText(text);
             card.classList.add('copied');
             setTimeout(() => card.classList.remove('copied'), 1000);
@@ -453,8 +460,9 @@
         // --- Export Feature ---
 
         function exportData() {
-            // Generate JSON strictly formatted for JS code
             const exportArray = allIcons.map(icon => {
+                // เลือก export เฉพาะที่มี ID หรือ export ทั้งหมดก็ได้
+                // ในที่นี้ export ทั้งหมดเพื่อให้โครงสร้างครบถ้วน
                 return `    { "img": "${icon.filename}", "id": "${icon.id}" }`;
             });
             
@@ -471,10 +479,9 @@
         function copyExportText() {
             exportText.select();
             document.execCommand("copy");
-            alert("Code copied! Now paste it into index.html to update it.");
+            alert("คัดลอกโค้ดเรียบร้อย! ให้นำไปวางทับในไฟล์ index.html");
         }
 
-        // Close modal if clicked outside
         window.onclick = function(event) {
             if (event.target == modal) {
                 closeModal();
